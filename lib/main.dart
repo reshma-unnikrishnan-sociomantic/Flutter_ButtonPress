@@ -22,7 +22,19 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {  
+  String text1 = 'click me';
+  void buttonPressed(){
+
+        //default Text =
+
+        setState(() {
+                  //update text
+                  text1  = 'You Clicked';
+                });
+      }
+
+
  
     @override
       Widget build(BuildContext context) {
@@ -31,19 +43,17 @@ class _MyHomePageState extends State<MyHomePage> {
           title: new Text('Welcome to Flutter'),
         ),
         body: new RaisedButton(key: null,
+  
         onPressed: buttonPressed,
         color: Colors.green,
-        child: new Text("Button 1", style: new TextStyle(fontSize: 13.0, color: const Color(0xFF000000))
+        child: new Text(text1),
         ),
-        ),    
-        );
+        );   
+      
     
 
       }
 
-      void buttonPressed(){
-
-
-      }
+    
 }
 
